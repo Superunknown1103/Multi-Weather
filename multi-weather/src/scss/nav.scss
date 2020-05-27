@@ -1,0 +1,99 @@
+.nav-li {
+    list-style-type: none;
+    margin: 0 2vw;
+  }
+
+.nav-li > a { 
+    text-decoration: none;
+    color: $base-gold;
+    font-family: $roboto;
+    font-weight: bold;
+}
+
+.nav-li > input {
+    font-size: 1.5rem;
+    background-color: transparent;
+    text-shadow: none;
+    border-bottom: solid 1px $base-gold;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    position: absolute;
+    top: 1.8rem;
+    color: gainsboro;
+}
+
+::placeholder { 
+    color: gainsboro;
+    opacity: 1; 
+  }
+
+nav {
+    width: 100vw;
+    background-color: $base-blue;
+}
+
+.nav-ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-logo {
+    font-family: $logo-font !important;
+    font-size: 4rem;
+    margin-left: 15%;
+}
+
+.fa-search {
+    color: gainsboro;
+    position: absolute;
+    top: 2.25rem;
+    font-size: 20px;
+    transform: translate(16rem, -3px);
+}
+
+.fa-search:hover {
+    cursor: pointer;
+}
+
+.fa-user {
+    position: absolute;
+    right: 5.25rem;
+    color: $base-gold;
+    top: 0.5rem;
+}
+
+.nav-ul > :nth-child(2) {
+    margin-right: auto;
+  }
+
+.login-li {
+    font-size: 2rem;
+    position: absolute;
+    top: 1.25rem;
+    right: 8rem;
+    text-decoration: underline;
+    @media only screen and (max-width: 800px) {
+        display: none;
+    }
+}
+
+.mobile-login-li {
+    font-size: 2rem;
+    position: absolute;
+    right: -3rem;
+    top: 1.4rem;
+}
+
+.mobile-login-li:hover {
+    cursor: pointer;
+}
+
+.login-li:hover {
+    cursor: pointer;
+}
+
+.nav-logo:hover {
+    cursor: pointer;
+}

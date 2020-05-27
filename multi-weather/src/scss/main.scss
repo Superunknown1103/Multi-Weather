@@ -1,0 +1,18 @@
+$base-blue: #1976d2;
+$base-gold: #eed638;
+$roboto: 'Roboto', sans-serif;
+$logo-font: 'Fredoka One', cursive;
+
+.mobile {
+    @media only screen and (max-width: 800px) { 
+        display: unset;
+    }
+    display: none;
+}
+
+body {
+    background-color: #e8e8e8
+}
+
+@import
+'nav';
