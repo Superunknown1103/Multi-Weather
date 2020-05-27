@@ -11,8 +11,17 @@ $logo-font: 'Fredoka One', cursive;
 }
 
 body {
-    background-color: #e8e8e8
+    background-color: #e8e8e8;
+    font-family: $roboto;
+}
+
+.slogan {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 @import
-'nav';
+'nav',
+'weatherlist';
