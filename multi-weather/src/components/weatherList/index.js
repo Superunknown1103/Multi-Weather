@@ -3,7 +3,9 @@ import WeatherBox from './weatherbox/index.js';
 
 
 export default class WeatherList extends Component { 
-render() {
+    // code to try to push permissions
+
+    render() {
     return (
         <div>
         <WeatherBox />
