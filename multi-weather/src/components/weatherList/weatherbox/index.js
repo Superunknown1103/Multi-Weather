@@ -2,11 +2,16 @@ import React, {Component} from 'react';
 
 
 export default class WeatherBox extends Component { 
-render() {
-    return (
-       <div class="weatherBox">
-weather source goes here
-       </div>
-    )
-}
+
+    componentDidMount(){   
+    }
+
+    render() {
+        return (
+            <div class="weatherBox">
+                {console.log('inside weatherbox', this.props)}
+                <h1>{this.props.weather.weatherText}</h1>
+            </div>
+        )
+    }
 }
