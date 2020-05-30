@@ -3,7 +3,36 @@ import WeatherBox from './weatherbox/index.js';
 
 
 export default class WeatherList extends Component { 
-    // code to try to push permissions
+    constructor(){
+        super()
+        this.state = {
+            cityLocation: 'Chicago'
+        }
+    }
+    // accuweather
+    fetchAccuweatherCities = () => {
+        fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=BL84oxFsikLXeqZkAcPefEG8okzzcGzu&q=${this.state.cityLocation}&language=en-us`)
+        .then(r => r.json())
+        .then(cities => {
+            console.log('Accu', cities)
+            return cities
+        })
+    }
+
+    // the weather channel
+    fetchWeatherChannelCities = () => {
+        fetch(`https://api.weather.com/v3/location/search?query=${this.state.cityLocation}&locationType=city&language=en-US&format=json&apiKey=320c9252a6e642f38c9252a6e682f3c6`)
+        .then(r => r.json())
+        .then(cities => {
+            console.log('Weather Channel', cities)
+            return cities
+        })
+    }
+
+    componentDidMount(){
+        this.fetchAccuweatherCities()
+        this.fetchWeatherChannelCities()
+    }
 
     render() {
     return (
