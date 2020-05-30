@@ -11,6 +11,7 @@ export default class WeatherBox extends Component {
             <div class="weatherBox">
                 {console.log('inside weatherbox', this.props)}
                 <h1>{this.props.weather.weatherText}</h1>
+                <p>{this.props.weather.name}</p>
             </div>
         )
     }
