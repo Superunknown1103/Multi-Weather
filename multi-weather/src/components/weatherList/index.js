@@ -2,16 +2,24 @@ import React, {Component} from 'react';
 import WeatherBox from './weatherbox/index.js';
 
 export default class WeatherList extends Component { 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            cityLocation: 'Chicago',
+            cityLocation: props.city,
             AWCurrentConditions: {},
-            WCCurrentConditions: {}
+            WCCurrentConditions: {},
         }
     }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            cityLocation: nextProps.city
+        })
+    };
+
     // accuweather
     fetchAccuweatherCities = () => {
+        console.log(this.state.cityLocation)
         fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=BL84oxFsikLXeqZkAcPefEG8okzzcGzu&q=${this.state.cityLocation}&language=en-us`)
         .then(r => r.json())
         .then(cities => {
@@ -80,7 +88,13 @@ export default class WeatherList extends Component {
         this.fetchWeatherChannelCities()
     }
 
+    // componentDidUpdate(){
+    //     this.fetchAccuweatherCities()
+    //     this.fetchWeatherChannelCities()
+    // }
+
     render() {
+        console.log(this.state.cityLocation)
     return (
         <div>
         <WeatherBox weather={this.state.AWCurrentConditions} />
